@@ -23,6 +23,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
     <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -39,10 +40,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".GeocodeActivity" />
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="c1100f9fdf797a375e7992666b90d867" />
+            android:value="de5b0688f330fff9e74dc58b54808a88" />
         <service android:name="com.amap.api.location.APSService"></service>
 
     </application>

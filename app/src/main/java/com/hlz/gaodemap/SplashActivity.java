@@ -32,13 +32,13 @@ public class SplashActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-//                startActivity(intent);
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, 1);
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                startActivity(intent);
+//                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                startActivityForResult(intent, 1);
             }
         });
-        requestPermission(new String[]{Permission.WRITE_EXTERNAL_STORAGE,Permission.ACCESS_COARSE_LOCATION, Permission.ACCESS_FINE_LOCATION,Permission.CAMERA});
+        requestPermission(new String[]{Permission.WRITE_EXTERNAL_STORAGE, Permission.ACCESS_COARSE_LOCATION, Permission.ACCESS_FINE_LOCATION, Permission.CAMERA});
     }
 
     private void requestPermission(String[]... permissions) {
