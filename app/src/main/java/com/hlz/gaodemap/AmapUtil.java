@@ -26,7 +26,7 @@ public class AmapUtil {
         return amapUtil;
     }
 
-    public void getLocation(final CallBack back) {
+    public void getLocation(final CallBack<AMapLocation> back) {
         //声明AMapLocationClient类对象
         mLocationClient = null;
         //声明定位回调监听器

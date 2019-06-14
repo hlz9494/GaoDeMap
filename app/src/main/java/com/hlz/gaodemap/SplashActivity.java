@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amap.api.location.AMapLocation;
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.AMapUtils;
 import com.yanzhenjie.permission.Action;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.Permission;
@@ -32,10 +35,23 @@ public class SplashActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+//                startActivity(intent);
 //                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 //                startActivityForResult(intent, 1);
+                AmapUtil.getAmapUtil().getLocation(new CallBack<AMapLocation>() {
+                    @Override
+                    public void onSuccess(AMapLocation o) {
+                        textView.setText(o.getLatitude() + "," + o.getLongitude());
+                    }
+
+                    @Override
+                    public void onFail(String msg) {
+                        textView.setText(msg);
+
+                    }
+                });
+
             }
         });
         requestPermission(new String[]{Permission.WRITE_EXTERNAL_STORAGE, Permission.ACCESS_COARSE_LOCATION, Permission.ACCESS_FINE_LOCATION, Permission.CAMERA});
